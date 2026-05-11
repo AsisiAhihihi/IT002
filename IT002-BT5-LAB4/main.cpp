@@ -21,6 +21,7 @@ public:
 
     DaThuc(int b = 0) {
         iBac = b;
+        iHeSo.resize(iBac + 1, 0);
     }
 
     DaThuc operator+(const DaThuc& other) const {
@@ -86,6 +87,7 @@ public:
     friend istream& operator>>(istream& is, DaThuc& dt) {
         cout << "Nhap iBac cua da thuc: ";
         is >> dt.iBac;
+        dt.iHeSo.resize(dt.iBac + 1);
         for (int i = dt.iBac; i >= 0; --i) {
             cout << "He so cua x^" << i << ": ";
             is >> dt.iHeSo[i];
