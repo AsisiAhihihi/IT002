@@ -56,7 +56,7 @@ public:
     CDate operator--(int) { CDate temp = *this; --(*this); return temp; }
 
     long operator-(const CDate& other) const {
-        return abs(this->toDays() - other.toDays());
+        return (this->toDays() - other.toDays());
     }
 
     friend ostream& operator<<(ostream& os, const CDate& d) {
